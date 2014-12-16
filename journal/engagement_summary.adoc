@@ -1,0 +1,60 @@
+ifdef::env-github[]
+++++
+<a name="scope_ordered"></a>
+++++
+endif::env-github[]
+
+=== Objectives
+==== Project Scope:
+* [ ] Installing up to three (3) CloudForms appliances for CloudForms provisioning and for remote calls from ServiceNow Service Catalog.
+* [ ] Creating two (2) dashboards in CloudForms consisting of up to fifteen (15) reports in total showcasing Virtual Machine (VM) performance and capacity.
+* [ ] Initializing CloudForms charge back rates with up to two (2) reports.
+* [ ] Creating CloudForms categories ("tags") where appropriate.
+* [ ] Integrating Active Directory for mapping groups to CloudForms user functions
+* [ ] Setting up up Windows and Linux VM provisioning for a VMWare vSphere environment via the provisioning dialog based on Windows and Linux templates
+* [ ] Creating a service catalog to provision Windows and Linux VMs including the following features:
+* [ ] pre-provisioning methods to provision VMs in a folder based on CloudForms tags
+* [ ] placement of VMs in specific VLANs using CloudForms tags
+* [ ] creation of VM names based on tags and/or a combination of user-input variables
+* [ ] acquisition of IP addresses from InfoBlox IP Address Management (IPAM)
+* [ ] registration of new VMs with Active Directory
+* [ ] leveraging VMWare VIX for post-execution steps for Windows and Linux
+* [ ] Creating a dialog button and methods to remove Virtual Machines from inventory including the following features:
+* [ ] powering off VMs
+* [ ] moving VMs to new Virtual Center folders
+* [ ] providing a dialog button to remove VMs from Virtual Center inventory, to remove VMs from Active Directory, and to
+* [ ] release IP addresses from Infoblox
+* [ ] Creating a ServiceNow Service Catalog interface to launch provisioning methods leveraging ServiceNow Service Catalog
+* [ ] access and the ManageIQ plugin provided by ServiceNow.
+* [ ] Integrating with one (1) VMWare vCenter Orchestrator (VCO) workflow leveraging REST APIs.
+* [ ] Providing documentation of the installation and configuration of CloudForms in the form of an Engagement Journal
+* [ ] Providing mentoring to client resources related to the CloudForms installation and configuration
+
+==== Proposed Schedule
+
+* Duration
+** 3 weeks, Sept 8 – Sept 26
+* Start Date
+** Sept 8th, 2014
+* Travel Schedule
+** Week 1 (9/8 - 9/12)
+*** On-site support with 1 consultant and 1 DA
+** Week 2-3 (9/15 - 9/26)
+*** On-site support with 1 consultants (1 DA available as needed)
+
+
+=== Logistics
+* Place of Performance
+** 3100 Windy Hill Road Atlanta GA 30339
+* On-Site Customer Contact
+** Jonathan Junkins: 770-850-2359
+* Security Requirements
+** None
+* Parking
+** [TBD]
+
+
+=== Contact Information
+
+include::engagement_contactinfo.adoc[]
+
