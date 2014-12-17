@@ -1,0 +1,107 @@
+---
+- MiqPolicySet:
+    name: 3be240d8-2866-11de-af2a-0050568026c2
+    description: ! 'Mandatory: Provisioning and Retirement'
+    set_type: MiqPolicySet
+    guid: 3be240d8-2866-11de-af2a-0050568026c2
+    read_only: 
+    set_data:
+      :notes: ! 'This policy profile is REQUIRED if EVM is being used to Provision
+        or Retire vms. It must be entitled to the desired management systems. Note:
+        this policy profile will potentially result in the removal of a vm from the
+        management system upon retirement if the associated VM Retirement statemachine
+        [/Factory/StateMachine/VMRetirement] in the the Automate model is configured
+        to delete vms. It is not configured for vm deletion out-of-the-box.'
+    mode: control
+    owner_type: 
+    owner_id: 
+    MiqPolicy:
+    - name: Automation Policy - Scope VM Retirement Warning,  ResponseExecute Automation
+        Model
+      description: ! 'Operational: Retirement Warning'
+      expression: 
+      towhat: Vm
+      guid: 39621392-2866-11de-af2a-0050568026c2
+      created_by: 
+      updated_by: admin
+      notes: This policy raises an automation event when a retirement warning event
+        is raised
+      active: true
+      mode: control
+      MiqPolicyContent:
+      - qualifier: success
+        success_sequence: 1
+        failure_synchronous: true
+        MiqEvent:
+          name: vm_retire_warn
+          description: VM Retirement Warning
+          guid: 97c85330-fe93-11dd-b5e1-005056903dbc
+          event_type: Default
+          definition: 
+          default: 
+          enabled: 
+        MiqAction:
+          name: raise_automation_event
+          description: Raise Automation Event
+          guid: e7da3b7a-1139-11e1-9333-005056af009e
+          action_type: default
+          options: {}
+      Condition: []
+    - name: Automation Policy - Scope VM Retired Response Execute Automation Model
+      description: ! 'Operational: Vm Retired'
+      expression: 
+      towhat: Vm
+      guid: 397700ae-2866-11de-af2a-0050568026c2
+      created_by: 
+      updated_by: admin
+      notes: This policy raises an automation event when a vm retirement event is
+        raised
+      active: true
+      mode: control
+      MiqPolicyContent:
+      - qualifier: success
+        success_sequence: 1
+        failure_synchronous: true
+        MiqEvent:
+          name: vm_retired
+          description: VM Retired
+          guid: e363d8aa-1e1e-11de-8918-0050568005db
+          event_type: Default
+          definition: 
+          default: 
+          enabled: 
+        MiqAction:
+          name: raise_automation_event
+          description: Raise Automation Event
+          guid: e7da3b7a-1139-11e1-9333-005056af009e
+          action_type: default
+          options: {}
+      Condition: []
+    - name: 427a4378-6519-11df-b637-005056a435be
+      description: ! 'Analysis: Post Provisioning'
+      expression: 
+      towhat: Vm
+      guid: 427a4378-6519-11df-b637-005056a435be
+      created_by: admin
+      updated_by: admin
+      notes: This policy triggers a vm analysis of any newly provisioned VM
+      active: true
+      mode: control
+      MiqPolicyContent:
+      - qualifier: success
+        success_sequence: 1
+        MiqEvent:
+          name: vm_provisioned
+          description: VM Provision Complete
+          guid: 2a17a20a-3e8e-11df-9fe2-005056a435be
+          event_type: Default
+          definition: 
+          default: 
+          enabled: 
+        MiqAction:
+          name: vm_analyze
+          description: Initiate SmartState Analysis for VM
+          guid: 5cbe1082-ce35-11de-a117-005056b0503e
+          action_type: default
+          options: {}
+      Condition: []
